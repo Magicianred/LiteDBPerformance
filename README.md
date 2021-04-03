@@ -68,12 +68,6 @@ Tested on:
 MacBook Pro 2014: i7, 16GB Ram
 
 ```
-==============================
-Insert         :   814 ms -     6139 records/second
-Bulk           :    63 ms -    78844 records/second
-Update         :   351 ms -    14242 records/second
-CreateIndex    :   212 ms -    23481 records/second
-Query          :   414 ms -    12070 records/second
 LiteDB: default - 5000 records
 ==============================
 Insert         :   870 ms -     5743 records/second
