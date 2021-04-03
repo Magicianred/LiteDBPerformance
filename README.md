@@ -61,3 +61,65 @@ Delete         :  9465 ms -      528 records/second
 Drop           :   436 ms -    11453 records/second
 File Size : 11888 kb
 ```
+
+---
+
+Tested on:
+MacBook Pro 2014: i7, 16GB Ram
+
+```
+LiteDB: default - 5000 records
+==============================
+Insert         :   870 ms -     5743 records/second
+Bulk           :    66 ms -    75617 records/second
+Update         :   346 ms -    14421 records/second
+CreateIndex    :   222 ms -    22501 records/second
+Query          :   412 ms -    12127 records/second
+Delete         :  1216 ms -     4112 records/second
+Drop           :    45 ms -   109437 records/second
+File Size : 11960 kb
+
+LiteDB: default - 5000 records
+==============================
+Insert         :   802 ms -     6228 records/second
+Bulk           :   105 ms -    47601 records/second
+Update         :   347 ms -    14375 records/second
+CreateIndex    :   221 ms -    22614 records/second
+Query          :   404 ms -    12363 records/second
+Delete         :  1218 ms -     4104 records/second
+Drop           :    42 ms -   116596 records/second
+File Size : 12032 kb
+
+LiteDB: encrypted - 5000 records
+================================
+Insert         :   587 ms -     8515 records/second
+Bulk           :    63 ms -    78599 records/second
+Update         :   378 ms -    13201 records/second
+CreateIndex    :   172 ms -    28922 records/second
+Query          :   321 ms -    15543 records/second
+Delete         :   932 ms -     5364 records/second
+Drop           :    27 ms -   179163 records/second
+File Size : 12024 kb
+
+SQLite: default - 5000 records
+==============================
+Insert         :  4764 ms -     1049 records/second
+Bulk           :   752 ms -     6645 records/second
+Update         :  4664 ms -     1072 records/second
+CreateIndex    :    14 ms -   353965 records/second
+Query          :   103 ms -    48221 records/second
+Delete         :     3 ms -  1454969 records/second
+Drop           :     3 ms -  1556808 records/second
+File Size :  8848 kb
+
+SQLite: encrypted - 5000 records
+================================
+Insert         :  5831 ms -      857 records/second
+Bulk           :   776 ms -     6438 records/second
+Update         :  5699 ms -      877 records/second
+CreateIndex    :    66 ms -    74924 records/second
+Query          :   145 ms -    34469 records/second
+Delete         :   187 ms -    26706 records/second
+Drop           :   177 ms -    28172 records/second
+File Size :  9036 kb
+```
