@@ -59,7 +59,7 @@ namespace LiteDBPerformanceTester
 
             foreach (var item in docsNew)
             {
-                item.Id += 10000;
+                item.Id += _docs.Count;
             }
             
             _liteDb.GetCollection<Helper.TestDoc>().InsertBulk(docsNew);
