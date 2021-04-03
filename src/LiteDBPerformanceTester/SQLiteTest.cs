@@ -24,20 +24,19 @@ namespace LiteDBPerformanceTester
         }
 
         public void Prepare()
-        {
-            
+        { 
             _db.Open();
 
-            var table = new SqliteCommand("CREATE TABLE test_table (id INTEGER NOT NULL PRIMARY KEY, name TEXT, lorem TEXT)", _db);
+            var table = new SqliteCommand("CREATE TABLE test_table (id INTEGER NOT NULL PRIMARY KEY, name TEXT, longtext TEXT)", _db);
             table.ExecuteNonQuery();
 
-            var table2 = new SqliteCommand("CREATE TABLE test_table_bulk (id INTEGER NOT NULL PRIMARY KEY, name TEXT, lorem TEXT)", _db);
+            var table2 = new SqliteCommand("CREATE TABLE test_table_bulk (id INTEGER NOT NULL PRIMARY KEY, name TEXT, longtext TEXT)", _db);
             table2.ExecuteNonQuery();
         }
 
         public void Insert()
         {
-            var cmd = new SqliteCommand("INSERT INTO test_table (name, lorem) VALUES (@name, @lorem)", _db);
+            var cmd = new SqliteCommand("INSERT INTO test_table (name, longtext) VALUES (@name, @lorem)", _db);
 
             cmd.Parameters.Add(new SqliteParameter("name", DbType.String));
             cmd.Parameters.Add(new SqliteParameter("lorem", DbType.String));
@@ -55,7 +54,7 @@ namespace LiteDBPerformanceTester
         {
             using (var trans = _db.BeginTransaction())
             {
-                var cmd = new SqliteCommand("INSERT INTO test_table_bulk (name, lorem) VALUES (@name, @lorem)", _db);
+                var cmd = new SqliteCommand("INSERT INTO test_table_bulk (name, longtext) VALUES (@name, @lorem)", _db);
 
                 cmd.Parameters.Add(new SqliteParameter("name", DbType.String));
                 cmd.Parameters.Add(new SqliteParameter("lorem", DbType.String));
@@ -75,7 +74,7 @@ namespace LiteDBPerformanceTester
 
         public void Update()
         {
-            var cmd = new SqliteCommand("UPDATE test_table SET name = @name, lorem = @lorem WHERE id = @id", _db);
+            var cmd = new SqliteCommand("UPDATE test_table SET name = @name, longtext = @lorem WHERE id = @id", _db);
 
             cmd.Parameters.Add(new SqliteParameter("id", DbType.Int32));
             cmd.Parameters.Add(new SqliteParameter("name", DbType.String));
