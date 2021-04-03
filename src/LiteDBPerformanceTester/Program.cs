@@ -12,6 +12,8 @@ namespace LiteDBPerformanceTester
             RunTest("SQLite: default", new SQLiteTest(5000, string.Empty));
             RunTest("SQLite: encrypted", new SQLiteTest(5000, "pa44w0rd"));
 
+            RunTest("MongoDB: default", new MongoDBTest(5000, string.Empty));
+            
             Console.ReadKey();
         }
 
