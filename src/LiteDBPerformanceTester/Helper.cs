@@ -11,7 +11,7 @@ namespace LiteDBPerformanceTester
 {
     static class Helper
     {
-        public static void Run(this ILiteDBTest test, string name, Action action)
+        public static void Run(this IDBTest test, string name, Action action)
         {
             var sw = new Stopwatch();
 

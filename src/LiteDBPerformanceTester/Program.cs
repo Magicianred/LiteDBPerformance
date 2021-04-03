@@ -8,11 +8,14 @@ namespace LiteDBPerformanceTester
         {
             RunTest("LiteDB: default", new LiteDBTest(5000, string.Empty));
             RunTest("LiteDB: encrypted", new LiteDBTest(5000, "pa44w0rd"));
-            
+
+            RunTest("SQLite: default", new SQLiteTest(5000, string.Empty));
+            RunTest("SQLite: encrypted", new SQLiteTest(5000, "pa44w0rd"));
+
             Console.ReadKey();
         }
 
-        static void RunTest(string name, ILiteDBTest test)
+        static void RunTest(string name, IDBTest test)
         {
             var title = name + " - " + test.Count + " records";
             Console.WriteLine(title);

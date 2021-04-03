@@ -11,7 +11,7 @@ using LiteDB.Engine;
 
 namespace LiteDBPerformanceTester
 {
-    public class LiteDBTest : ILiteDBTest
+    public class LiteDBTest : IDBTest
     {
         private string _filename;
         private LiteDatabase  _liteDb;

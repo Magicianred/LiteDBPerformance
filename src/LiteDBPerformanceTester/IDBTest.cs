@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LiteDBPerformanceTester
 {
-    public interface ILiteDBTest : IDisposable
+    public interface IDBTest : IDisposable
     {
         int Count { get; }
         int FileLength { get; }
